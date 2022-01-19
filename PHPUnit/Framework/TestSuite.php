@@ -422,6 +422,7 @@ class PHPUnit_Framework_TestSuite implements PHPUnit_Framework_Test, PHPUnit_Fra
      *
      * @return integer
      */
+    #[\ReturnTypeWillChange]
     public function count()
     {
         if ($this->numTests > -1) {
@@ -925,6 +926,7 @@ class PHPUnit_Framework_TestSuite implements PHPUnit_Framework_Test, PHPUnit_Fra
      * @return RecursiveIteratorIterator
      * @since  Method available since Release 3.1.0
      */
+    #[\ReturnTypeWillChange]
     public function getIterator()
     {
         return new RecursiveIteratorIterator(

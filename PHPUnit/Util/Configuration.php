@@ -538,8 +538,10 @@ class PHPUnit_Util_Configuration
             // See https://github.com/sebastianbergmann/phpunit/issues/277
             switch ($array) {
                 case 'var':
-                    $target = &$GLOBALS;
-                    break;
+                    foreach ($configuration[$array] as $name => $value) {
+                        $GLOBALS[$name] = $value;
+                    }
+                    continue 2;
 
                 case 'env':
                     $target = &$_ENV;
@@ -550,8 +552,10 @@ class PHPUnit_Util_Configuration
                     break;
 
                 default:
-                    $target = &$GLOBALS['_' . strtoupper($array)];
-                    break;
+                    foreach ($configuration[$array] as $name => $value) {
+                        $GLOBALS['_' . strtoupper($array)][$name] = $value;
+                    }
+                    continue 2;
             }
 
             foreach ($configuration[$array] as $name => $value) {
