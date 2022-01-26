@@ -3,14 +3,22 @@ class Issue578Test extends PHPUnit_Framework_TestCase
 {
     public function testNoticesDoublePrintStackTrace()
     {
-        $this->iniSet('error_reporting', E_ALL | E_NOTICE);
-        trigger_error('Stack Trace Test Notice', E_NOTICE);
+        try {
+            $this->iniSet('error_reporting', E_ALL | E_NOTICE);
+            trigger_error('Stack Trace Test Notice', E_NOTICE);
+        } catch (\ValueError $e) {
+            \trigger_error('Invalid error type specified');
+        }
     }
 
     public function testWarningsDoublePrintStackTrace()
     {
-        $this->iniSet('error_reporting', E_ALL | E_NOTICE);
-        trigger_error('Stack Trace Test Notice', E_WARNING);
+        try {
+            $this->iniSet('error_reporting', E_ALL | E_NOTICE);
+            trigger_error('Stack Trace Test Notice', E_WARNING);
+        } catch (\ValueError $e) {
+            \trigger_error('Invalid error type specified');
+        }
     }
 
     public function testUnexpectedExceptionsPrintsCorrectly()

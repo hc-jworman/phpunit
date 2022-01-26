@@ -181,7 +181,7 @@ class PHPUnit_Util_Getopt
 
             if (substr($long_opt, -1) == '=') {
                 if (substr($long_opt, -2) != '==') {
-                    if (!strlen($opt_arg)) {
+                    if ($opt_arg === null || !strlen($opt_arg)) {
                         if (false === $opt_arg = current($args)) {
                             throw new PHPUnit_Framework_Exception(
                                 "option --$opt requires an argument"

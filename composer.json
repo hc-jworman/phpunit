@@ -1,5 +1,5 @@
 {
-    "name": "zf1s/phpunit",
+    "name": "jworman/phpunit",
     "replace": {
         "phpunit/phpunit": "^3.7.38"
     },
@@ -25,11 +25,8 @@
     },
     "require": {
         "php": ">=5.3.3",
-        "phpunit/php-file-iterator": "~1.3",
-        "phpunit/php-text-template": "~1.1",
         "phpunit/php-code-coverage": "~1.2",
         "phpunit/php-timer": "1.0.7",
-        "phpunit/phpunit-mock-objects": "~1.2",
         "symfony/yaml": "~2.0",
         "ext-ctype": "*",
         "ext-dom": "*",
@@ -38,15 +35,11 @@
         "ext-reflection": "*",
         "ext-spl": "*"
     },
-    "require-dev": {
-        "pear-pear.php.net/pear": "~1.9|~1.10"
+    "provide": {
+        "phpunit/php-text-template": "1.2.1",
+        "phpunit/phpunit-mock-objects": "1.2.3",
+        "phpunit/php-file-iterator": "1.4.5"
     },
-    "repositories": [
-        {
-            "type": "pear",
-            "url": "https://pear.php.net"
-        }
-    ],
     "suggest": {
         "phpunit/php-invoker": "~1.1"
     },
@@ -55,7 +48,10 @@
     ],
     "autoload": {
         "classmap": [
-            "PHPUnit/"
+            "PHPUnit/",
+            "phpunit-mock-objects/PHPUnit/",
+            "php-text-template/src/",
+            "php-file-iterator/src/"
         ]
     },
     "extra": {

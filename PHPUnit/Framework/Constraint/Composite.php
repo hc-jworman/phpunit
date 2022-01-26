@@ -107,6 +107,7 @@ abstract class PHPUnit_Framework_Constraint_Composite extends PHPUnit_Framework_
      *
      * @return integer
      */
+    #[\ReturnTypeWillChange]
     public function count()
     {
         return count($this->innerConstraint);

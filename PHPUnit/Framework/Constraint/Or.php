@@ -144,6 +144,7 @@ class PHPUnit_Framework_Constraint_Or extends PHPUnit_Framework_Constraint
      * @return integer
      * @since  Method available since Release 3.4.0
      */
+    #[\ReturnTypeWillChange]
     public function count()
     {
         $count = 0;
