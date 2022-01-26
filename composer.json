@@ -1,5 +1,5 @@
 {
-    "name": "zf1s/phpunit",
+    "name": "jworman/phpunit",
     "replace": {
         "phpunit/phpunit": "^3.7.38"
     },
