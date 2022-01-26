@@ -29,7 +29,7 @@
         "phpunit/php-text-template": "~1.1",
         "phpunit/php-code-coverage": "~1.2",
         "phpunit/php-timer": "1.0.7",
-        "phpunit/phpunit-mock-objects": "~1.2",
+        "phpunit/phpunit-mock-objects": "dev-Make_Php_8.1_Compatible",
         "symfony/yaml": "~2.0",
         "ext-ctype": "*",
         "ext-dom": "*",
@@ -38,14 +38,8 @@
         "ext-reflection": "*",
         "ext-spl": "*"
     },
-    "require-dev": {
-        "pear-pear.php.net/pear": "~1.9|~1.10"
-    },
     "repositories": [
-        {
-            "type": "pear",
-            "url": "https://pear.php.net"
-        }
+        {"type": "github", "url": "https://github.com/hc-jworman/phpunit-mock-objects.git"}
     ],
     "suggest": {
         "phpunit/php-invoker": "~1.1"
