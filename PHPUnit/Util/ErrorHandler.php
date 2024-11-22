@@ -99,7 +99,7 @@ class PHPUnit_Util_ErrorHandler
             }
         }
 
-        if ($errno == E_NOTICE || $errno == E_USER_NOTICE || $errno == E_STRICT) {
+        if ($errno == E_NOTICE || $errno == E_USER_NOTICE) {
             if (PHPUnit_Framework_Error_Notice::$enabled !== TRUE) {
                 return FALSE;
             }

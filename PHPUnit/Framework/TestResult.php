@@ -582,7 +582,7 @@ class PHPUnit_Framework_TestResult implements Countable
         if ($this->convertErrorsToExceptions) {
             $oldErrorHandler = set_error_handler(
               array('PHPUnit_Util_ErrorHandler', 'handleError'),
-              E_ALL | E_STRICT
+              E_ALL
             );
 
             if ($oldErrorHandler === NULL) {
